@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://is-whale.github.io/</id>
+    <title>is-whale</title>
+    <updated>2022-05-29T16:08:08.773Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://is-whale.github.io/"/>
+    <link rel="self" href="https://is-whale.github.io/atom.xml"/>
+    <subtitle>鲨鲨和豚豚的小站</subtitle>
+    <logo>https://is-whale.github.io/images/avatar.png</logo>
+    <icon>https://is-whale.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, is-whale</rights>
+    <entry>
+        <title type="html"><![CDATA[修复Gridea远端文章]]></title>
+        <id>https://is-whale.github.io/post/EBNzUVknm/</id>
+        <link href="https://is-whale.github.io/post/EBNzUVknm/">
+        </link>
+        <updated>2022-05-06T12:09:24.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="问题">问题</h3>
+<p>本地修改，同步到远程之后电机打开文章，则域名会显示本地端口的URL，自然无法进入。<br>
+错误URL示例：<br>
+http://localhost:4000/yong-lai-ce-shi/<br>
+刚开始怀疑是没有生成正确的子页面URL，于是打开index.html检查，发现网址是对的，但是点击跳转之后依然是跳转到本地域名。<br>
+于是尝试使用远端主域名替换本地端口，即<br>
+https://is-whale.github.io/yong-lai-ce-shi/<br>
+跳转成功，文章正确显示，但是在文章结束的链接中依然是本地域名，</p>
+<h3 id="问题解决设想">问题解决设想</h3>
+<p>index的域名并不是真正的跳转链接，跳转链接应该在其他地方，（比如有可能是每个文章中的原文链接）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[dell调节亮度]]></title>
+        <id>https://is-whale.github.io/post/dell-diao-jie-liang-du/</id>
+        <link href="https://is-whale.github.io/post/dell-diao-jie-liang-du/">
+        </link>
+        <updated>2022-01-30T04:12:20.000Z</updated>
+        <content type="html"><![CDATA[<p>码着码着，慢慢写</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[加密压缩包暴力破解]]></title>
+        <id>https://is-whale.github.io/post/jia-mi-ya-suo-bao-bao-li-po-jie/</id>
+        <link href="https://is-whale.github.io/post/jia-mi-ya-suo-bao-bao-li-po-jie/">
+        </link>
+        <updated>2022-01-29T13:41:23.000Z</updated>
+        <content type="html"><![CDATA[<p>文章先码着，后面写</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[文件恢复软件]]></title>
+        <id>https://is-whale.github.io/post/hui-fu-ruan-jian/</id>
+        <link href="https://is-whale.github.io/post/hui-fu-ruan-jian/">
+        </link>
+        <updated>2022-01-29T13:40:29.000Z</updated>
+        <content type="html"><![CDATA[<p>发现了一批好用的恢复软件。文章先码着，慢慢写</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[电控远程调参的一个方案]]></title>
+        <id>https://is-whale.github.io/post/dian-kong-yuan-cheng-diao-can-de-yi-ge-da-dan-fang-an/</id>
+        <link href="https://is-whale.github.io/post/dian-kong-yuan-cheng-diao-can-de-yi-ge-da-dan-fang-an/">
+        </link>
+        <updated>2022-01-29T11:57:15.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>###原来的配置：<br>
+全双工无线串口一对，USART3在程序中设置为调试串口，实现一个串口shell；</p>
+<p>调参方案历经迭代，从最原始的程序中调试然后烧录，再到加入shell，使用一个有线ttl连接调试但是在调试一些危险的场景（云台，全车上电调试），有线串口常常会拽断线，甚至连带摔坏电脑。后来升级无线串口。<br>
+目前方案还算顺手但是还存在一些问题，如中低端无线串口会偶尔存在卡死的情况，而廖总引以为傲的高档无线串就不会卡死（廖总说的）😂。此外，通过打印来调试其实并不是万无一失的调试方案，会占用一定的时间，如果对时间比较敏感的代码会当场暴毙，但是也可以通过DMA+缓冲区+队列的方式来解决。</p>
+<p>###改进方案<br>
+####1.调试器自带的仿真调试<br>
+####2.通过程序和硬件升级串口<br>
+刚好放假前收了一个正点原子的ESP8266，最近在上手的时候有了一个大胆的调试想法。<br>
+首先，大疆DR16&amp;17遥控器遥控距离支持1km的超远距离，这样就让宿舍调参有了实现的可能😂😂😂，再加上ESP8266的STA模式。<br>
+利用esp的透传，又称透明传输，具体来说就是“输入即输出（如从WiFi模块串口输入的字符会透传到服务器端）”，数据不改变，不同协议之间的转换（如串口到WiFi、蓝牙等）由模块完成。使用者无需关心内部具体实现，因此模块对于使用者是“透明的”、似乎不存在的（因为可无视中间的实现原理）。一个高度封装的模块，应该隐藏内部实现细节，仅对外提供使用接口。'</p>
+<p>，然后搭配串口shell，就可以实现“人在床上躺，车在六楼调”的理想生活</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[机械组图纸协作体系]]></title>
+        <id>https://is-whale.github.io/post/ji-jie-zu-tu-zhi-xie-zuo-ti-xi/</id>
+        <link href="https://is-whale.github.io/post/ji-jie-zu-tu-zhi-xie-zuo-ti-xi/">
+        </link>
+        <updated>2022-01-27T15:47:53.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="工具">工具：</h4>
+<p>暂定使用微力协作</p>
+<p>后续添加自建服务器和中转方案<br>
+实现自动同步和云端库</p>
+<h3 id="步骤">步骤</h3>
+<h4 id="1下载安装包">1.下载安装包</h4>
+<p>绿色版，免安装，下载压缩包放在除C盘的任意分区，点击exe文件运行</p>
+<p>允许通过防火墙</p>
+<p>同意使用协议，重命名设备。</p>
+<h5 id="软件说明">软件说明</h5>
+<p>设备之间同步时是P2P直连，不经过中心服务器，所以必须保持至少一个设备在线，否则无法下载。<br>
+同时，由于不依赖中心服务器，性能优越并且数据完全自主掌控。<br>
+注：目前已在阿里云服务器部署了客户端，一直运行作为数据中心，能够保证所有数据一经修改则马上同步，目前英雄组图纸在云端保存。</p>
+<h4 id="2添加需要同步的文件夹">2.添加需要同步的文件夹</h4>
+<p>点击新建同步，有两个选项。</p>
+<p>标准文件夹用来同步自己件夹，连接密钥用来从别人电脑同步文件</p>
+<figure data-type="image" tabindex="1"><img src="E:%5CDIY%5CGridea%5Cpost-images%5Csoft%5C%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%A4%B9" alt="image-20220130140021268" loading="lazy"></figure>
+<h2 id="一标准文件夹组长或有完整图纸的组员">一，标准文件夹(组长或有完整图纸的组员)</h2>
+<h5 id="选择标准文件夹添加需要同步的图纸文件夹">选择标准文件夹，添加需要同步的图纸文件夹</h5>
+<h5 id="可以直接同步当前的图纸文件夹也可以把文件夹复制一份">可以直接同步当前的图纸文件夹也可以把文件夹复制一份</h5>
+<p>（建议把本地图纸文件夹复制一份，选中复制的来同步。在原来图纸文件夹内做完修改后继续复制，选择覆盖内容）</p>
+<h4 id="3然后设置权限协作修改图纸应选择为读写然后复制读写密钥发送给其他人">3.然后设置权限，协作修改图纸应选择为&quot;读写&quot;，然后复制读写密钥发送给其他人</h4>
+<p>至此，同步发起端设置完成。</p>
+<h2 id="二连接密钥组员">二，连接密钥（组员）</h2>
+<h4 id="1新建文件夹选择连接密钥输入组内密钥">1.新建文件夹，选择连接密钥，输入组内密钥</h4>
+<p>选择下一步</p>
+<p>在存放图纸的文件夹内新建一个空白文件夹。选择此路径</p>
+<p>设置完成</p>
+<h2 id="注意">注意</h2>
+<p>1.如果很多台电脑均设置了同步一个文件夹，当互相同步完成后，理论上只要有一台电脑联网，那其他电脑就可以连接并且同步</p>
+<p>2.多台设备之间没有优先级，互相同步的是任意一台电脑做的最新的修改。所以建议使用图纸文件夹的备份</p>
+<p>3.提前协商不要同时修改一个文件</p>
+<p>3.可以多测试，如同时修改保存同一个文件。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决Gridea打开空白]]></title>
+        <id>https://is-whale.github.io/post/jie-jue-gridea-da-kai-kong-bai/</id>
+        <link href="https://is-whale.github.io/post/jie-jue-gridea-da-kai-kong-bai/">
+        </link>
+        <updated>2022-01-27T13:32:23.000Z</updated>
+        <content type="html"><![CDATA[<p>如图<br>
+假装有图片</p>
+<p>打开C盘用户目录下的appdate文件夹<br>
+找到Grigea缓存目录，全部删除<br>
+重新打开<br>
+好了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Robomaster移植官方代码使用DAP]]></title>
+        <id>https://is-whale.github.io/post/robomaster-yi-zhi-guan-fang-dai-ma-shi-yong-dap/</id>
+        <link href="https://is-whale.github.io/post/robomaster-yi-zhi-guan-fang-dai-ma-shi-yong-dap/">
+        </link>
+        <updated>2022-01-27T13:06:45.000Z</updated>
+        <content type="html"><![CDATA[<p>##背景</p>
+<p>下载调试RoBoMaster官方程序，原来的工程下载选项是ST-LINK,但是我们日常使用的下载器是DAP系列下载器。按照经验将Debug中下载器改为DAP，然后下载依然提示无ST-LINK连接，下载失败。<br>
+<img src="https://is-whale.github.io//post-images/1643289109897.png" alt="" loading="lazy"></p>
+<p>解决方案<br>
+除了Debug中下载器改为ST-LINK,下图中也需改为ST-link<br>
+<img src="https://is-whale.github.io//post-images/1643289121232.png" alt="" loading="lazy"><br>
+但是大多数工程，第二个选项其实是缺省的，所以只进行第一步就可以正常下载。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[记录Gridea同步不成功的解决方案]]></title>
+        <id>https://is-whale.github.io/post/ji-lu-gridea-tong-bu-bu-cheng-gong-de-jie-jue-fang-an/</id>
+        <link href="https://is-whale.github.io/post/ji-lu-gridea-tong-bu-bu-cheng-gong-de-jie-jue-fang-an/">
+        </link>
+        <updated>2022-01-22T02:45:15.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="方案一">方案一</h3>
+<p>背景：Gridea推送原理依然是git下的推送，在软件内的所有静态界面生成后，会保存在软件目录下的output文件内，output目录同时会有一个&quot;.git&quot;文件。此目录可以作为仓库打开。查看config，发现是使用https链接进行同步，而此种方式在国内是很慢的，即使打开全局代理，<strong>Gridea是不走系统代理的</strong>，所以开代理的效果并不显著。</p>
+<p>根据经验，SSH链接的仓库推送拉取是最快的，不挂代理的情况速度轻轻松松可以达到1~2M甚至更快，<br>
+所以使用SSH方式同步仓库。步骤如下：</p>
+<h4 id="方法一">方法一</h4>
+<p>1.清空output文件夹内的所有文件（这里是生成的静态界面以及git仓库配置文件，并不是数据源文件，可以再次生成），原因是github不能克隆仓库到非空的文件夹内，所以需要清空。</p>
+<p>2.复制博客仓库的SSH链接（需要提前配置好SSH公钥，具体怎么配置请自行百度“如何添加github的ssh公钥”），然后克隆到本地</p>
+<pre><code>git clone git@github.com:XXX/XXX.github.io.git
+</code></pre>
+<p>3.此时output文件夹内会有.git文件，还有可能有其他文件，（取决于初始化仓库时有没有生成其他文件）然后删掉除了.git文件的其他所有文件，点击Gridea内的同步，同步是否成功没有关系，此时会在output文件架内生成用于发布的静态界面。接下来的操作完全就是操作一个git仓库，推送上去就可以，无论是git命令行或者Git desktop客户端还是其他第三方git客户端都没有区别，暂存文件并推送，打开博客主页，就可以看到推送成功。</p>
+<h4 id="方法2">方法2</h4>
+<p>这种方法是无意中试出来的，即删除.git文件，然后点击同步，可意外的同步成功，尝试了几次都可以。<br>
+不过测试次数不足，可能因人而异。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gridea配置]]></title>
+        <id>https://is-whale.github.io/post/gridea-pei-zhi/</id>
+        <link href="https://is-whale.github.io/post/gridea-pei-zhi/">
+        </link>
+        <updated>2022-01-21T03:42:53.000Z</updated>
+        <content type="html"><![CDATA[<p>初始化完成；<br>
+远程链接完成；<br>
+主题更换完成；<br>
+域名还未解析；</p>
+]]></content>
+    </entry>
+</feed>
