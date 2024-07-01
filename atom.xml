@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://is-whale.github.io/</id>
+    <title>whale</title>
+    <updated>2024-07-01T05:34:15.203Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://is-whale.github.io/"/>
+    <link rel="self" href="https://is-whale.github.io/atom.xml"/>
+    <subtitle>生当复来归，死亦长相思。</subtitle>
+    <logo>https://is-whale.github.io/images/avatar.png</logo>
+    <icon>https://is-whale.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, whale</rights>
+    <entry>
+        <title type="html"><![CDATA[智能指针]]></title>
+        <id>https://is-whale.github.io/post/0yJUJGsE_/</id>
+        <link href="https://is-whale.github.io/post/0yJUJGsE_/">
+        </link>
+        <updated>2024-07-01T02:09:30.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[隐式构造函数]]></title>
+        <id>https://is-whale.github.io/post/bS-hMhPe1/</id>
+        <link href="https://is-whale.github.io/post/bS-hMhPe1/">
+        </link>
+        <updated>2024-07-01T02:08:53.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[对象生存期]]></title>
+        <id>https://is-whale.github.io/post/yGgTc9Fu2/</id>
+        <link href="https://is-whale.github.io/post/yGgTc9Fu2/">
+        </link>
+        <updated>2024-07-01T02:08:15.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[纯虚函数]]></title>
+        <id>https://is-whale.github.io/post/_qJoB7l2I/</id>
+        <link href="https://is-whale.github.io/post/_qJoB7l2I/">
+        </link>
+        <updated>2024-07-01T02:07:46.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[成员初始化列表]]></title>
+        <id>https://is-whale.github.io/post/oPdzLnniU/</id>
+        <link href="https://is-whale.github.io/post/oPdzLnniU/">
+        </link>
+        <updated>2024-07-01T02:06:58.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[auto关键字]]></title>
+        <id>https://is-whale.github.io/post/nJjQ6s8Lr/</id>
+        <link href="https://is-whale.github.io/post/nJjQ6s8Lr/">
+        </link>
+        <updated>2024-07-01T01:57:17.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[双系统删除引导的修复]]></title>
+        <id>https://is-whale.github.io/post/NPIQdeBW4/</id>
+        <link href="https://is-whale.github.io/post/NPIQdeBW4/">
+        </link>
+        <updated>2022-08-23T23:27:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[修复Gridea远端文章]]></title>
+        <id>https://is-whale.github.io/post/EBNzUVknm/</id>
+        <link href="https://is-whale.github.io/post/EBNzUVknm/">
+        </link>
+        <updated>2022-05-06T12:09:24.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[dell调节亮度]]></title>
+        <id>https://is-whale.github.io/post/dell-diao-jie-liang-du/</id>
+        <link href="https://is-whale.github.io/post/dell-diao-jie-liang-du/">
+        </link>
+        <updated>2022-01-30T04:12:20.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[加密压缩包暴力破解]]></title>
+        <id>https://is-whale.github.io/post/jia-mi-ya-suo-bao-bao-li-po-jie/</id>
+        <link href="https://is-whale.github.io/post/jia-mi-ya-suo-bao-bao-li-po-jie/">
+        </link>
+        <updated>2022-01-29T13:41:23.000Z</updated>
+    </entry>
+</feed>
